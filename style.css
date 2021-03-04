@@ -1,0 +1,154 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: sans-serif;
+}
+nav{
+    background-color:#1e212d;
+    padding:5px, 20px;
+}
+ul{
+   list-style: none; 
+}
+a{
+    color:white;
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:underline;
+}
+.menu li{
+    font-size:1rem;
+    padding: 15px 5px;
+
+}
+.menu li a{
+    display: block;
+}
+.logo a{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color:#faf3e0;
+}
+.button.secondary{
+    border-bottom: 1px #fff solid;
+}
+/* mobile menu*/
+.menu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items: center;
+}
+.toggle{
+    order: 1;
+}
+.item.button{
+    order: 2;
+}
+.item{
+    order: 3;
+    width: 100%;
+    text-align:center;
+    display: none;
+}
+.item.active{
+    display: block;
+}
+.toggle{
+    cursor: pointer;
+}
+.bars{
+    background: #fff;
+    position: relative;
+    display: inline-block;
+    height: 2px;
+    width: 18px;
+}
+.bars::before, .bars::after{
+    background: #fff;
+    position: absolute;
+    content: "";
+    display: inline-block;
+    height: 2px;
+    width: 18px;
+}
+.bars::before{
+    top: 5px;
+}
+.bars::after{
+    top: -5px
+}
+/*Tablet Menu*/
+@media all and (min-width: 480px){
+    /*menu*/
+    .menu{
+        justify-content: center;
+    }
+    .logo{
+        flex: 1;
+    }
+    .item.button{
+        order: 1;
+        width:auto;
+        display: block;
+    }
+    .button.secondary{
+        border: none;
+    }
+    .toggle{
+        order: 2;
+    }
+    .button a{
+        text-decoration:none;
+        padding: 7px 13px;
+        background: cornflowerblue;
+        border-radius: 50em;
+        border: 2px solid cornflowerblue;
+    }
+    .button.secondary a{
+        background-color: transparent
+    }
+    .button a:hover{
+        transition: all .25s;
+    }
+    .button:not(.secondary) a:hover{
+        background: transparent;
+        border-color: #fff;
+        color: cornflowerblue;
+        font-weight: 600;
+    }
+    .button.secondary a:hover{
+        background: cornflowerblue;
+    }
+
+}
+/*Desktop Menu*/
+@media all and (min-width: 760px){
+    .item{
+        display: block;
+        width:auto;
+    }
+    .toggle{
+        display: none;
+    }
+    .logo{
+        order: 0;
+    }
+    .item{
+        order:1;
+    }
+    .button{
+        order: 2;
+    }
+    .menu li{
+        padding:15px 10px;
+    }
+    .menu li.button{
+        padding-right: 0;
+        margin-right: 20px;
+    }
+}
